@@ -1,0 +1,12 @@
+{
+  "name": "moxiescout-puppeteer-service",
+  "version": "1.0.0",
+  "description": "Puppeteer-based service to fetch data from MoxieScout",
+  "main": "index.js",
+  "dependencies": {
+    "puppeteer": "^19.7.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}
