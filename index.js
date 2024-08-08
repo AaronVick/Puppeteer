@@ -2,12 +2,14 @@ const puppeteer = require('puppeteer');
 
 module.exports = async (req, res) => {
   try {
+    const { fid = '354795' } = req.body;
+
     // Launch a new browser instance
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
-    // Navigate to the MoxieScout page
-    await page.goto('https://moxiescout.vercel.app/auction/354795');
+    // Navigate to the MoxieScout page for the given FID
+    await page.goto(`https://moxiescout.vercel.app/auction/${fid}`);
 
     // Wait for the page to load and the data to be rendered
     await page.waitForSelector('#auction-details');
